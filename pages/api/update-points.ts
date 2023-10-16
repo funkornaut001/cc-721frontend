@@ -33,10 +33,16 @@ export default async function updateLoyaltyCard(
 
         // Mondays = double points, friday half points
         const today = new Date().getDay();
+        const isSunday = today === 0;
         const isMonday = today === 1;
+        const isTuesday = today === 2;
+        const isWednesday = today === 3;
+        const isThursday = today === 4;
         const isFriday = today === 5;
+        const isSaturday = today === 6;
         
-        let pointsToAdd = 10;
+        
+        let pointsToAdd = 1;
         if (isMonday) {
             pointsToAdd = 20;
         }   else if (isFriday) {

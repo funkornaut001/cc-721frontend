@@ -22,12 +22,29 @@ export const NFTCard = ({ nft, tokenID }: NFTProps) => {
 
     // Call server side to update nft metadata
     const handleUpdatePoints = async () => {
+        // Mondays = double points, friday half points
+        const today = new Date().getDay();
+        const isSunday = today === 0;
+        const isMonday = today === 1;
+        const isTuesday = today === 2;
+        const isWednesday = today === 3;
+        const isThursday = today === 4;
+        const isFriday = today === 5;
+        const isSaturday = today === 6;
+        
+        
+        let pointsToAdd = 10;
+        if (isMonday) {
+            pointsToAdd = 20;
+        }   else if (isFriday) {
+            pointsToAdd = 5;
+        }
         const updatedMetadata = {
             ...nft.metadata,
             attributes: [
                 {
                     trait_type: "points",
-                    value: loyaltyCardPoints + 10
+                    value: loyaltyCardPoints + pointsToAdd,
                 },
             ],
         };
