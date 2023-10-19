@@ -66,7 +66,7 @@ function Leaderboard() {
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p>Error:</p>;
   }
 
 // type-casting
@@ -80,7 +80,7 @@ const nfts = data?.map((nft: any) => ({
 // grab owner & points properties from each NFT
  const loaderboardData = nfts.map((entry) => {
     console.log(entry.metadata.attributes); // Add this log
-
+    //@ts-ignore
     const pointsAttribute = entry.metadata.attributes?.find(attr => attr.trait_type === "points");
 
     const points = pointsAttribute?.value || 0;
