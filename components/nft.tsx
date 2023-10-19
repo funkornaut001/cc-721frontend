@@ -17,11 +17,13 @@ export const NFTCard = ({ nft, tokenID }: NFTProps) => {
         data: loyaltyCard,
         isLoading: loadingLoyaltyCard,
     } = useNFT(contract, tokenID);
-    console.log(loyaltyCard?.metadata.name);
-    console.log(loyaltyCard?.metadata.image);
+    //console.log(loyaltyCard?.metadata.name);
+    //console.log(loyaltyCard?.metadata.image);
 
     // Call server side to update nft metadata
     const handleUpdatePoints = async () => {
+        // figure out how many point to add
+
         // Mondays = double points, friday half points
         const today = new Date().getDay();
         const isSunday = today === 0;
@@ -39,6 +41,8 @@ export const NFTCard = ({ nft, tokenID }: NFTProps) => {
         }   else if (isFriday) {
             pointsToAdd = 5;
         }
+
+        // Update metadata with appropriate points, calling server side api
         const updatedMetadata = {
             ...nft.metadata,
             attributes: [
@@ -48,7 +52,7 @@ export const NFTCard = ({ nft, tokenID }: NFTProps) => {
                 },
             ],
         };
-    
+        // Get response from api
         const response = await fetch("/api/update-metadata", {
             method: "POST",
             headers: {
@@ -84,6 +88,7 @@ export const NFTCard = ({ nft, tokenID }: NFTProps) => {
         <div className={styles.loyaltyCard}>
             <ThirdwebNftMedia
                 metadata={nft.metadata}
+                // photo
                 height="100%"
                 width="100%"
             />

@@ -37,3 +37,8 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+
+# wip pages / abandoned
+/pages/api/leaderboard-data.ts 
+/pages/api/update-points.ts 

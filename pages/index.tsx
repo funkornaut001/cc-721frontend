@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { NextPage } from "next";
 import { LOYALTY_CARD_CONTRACT_ADDRESS } from "../const/addresses";
 import { NFTCard } from "../components/nft";
+import Leaderboard from "../components/leaderboard";
 
 const Home: NextPage = () => {
   const address = useAddress();
@@ -84,6 +85,7 @@ const Home: NextPage = () => {
           )}
         </div>
       </div>
+      <Leaderboard />
     </main>
   );
 };
