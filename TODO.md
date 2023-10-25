@@ -12,4 +12,7 @@ Profiles
     Need to set up profiles for users.
     User should login and the wallet they create will be tied to a profile with email
     
-    
+    Things to consider
+    Privacy and Permissions:
+        Consider which parts of a user's profile should be public and which should be private. Implement access controls accordingly.
+        Allow users to choose privacy settings for their profiles.

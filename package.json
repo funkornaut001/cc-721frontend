@@ -17,6 +17,7 @@
     "next": "^13",
     "react": "^18.2",
     "react-dom": "^18.2",
+    "react-dropzone": "^14.2.3",
     "thirdweb": "^0.13.4"
   },
   "devDependencies": {

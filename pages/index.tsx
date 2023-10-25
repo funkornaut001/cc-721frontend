@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { NextPage } from "next";
 import { LOYALTY_CARD_CONTRACT_ADDRESS } from "../const/addresses";
 import { NFTCard } from "../components/nft";
+import Ipfsupload from "../components/ipfsupload";
 import Leaderboard from "../components/leaderboard";
 
 const Home: NextPage = () => {
@@ -85,6 +86,7 @@ const Home: NextPage = () => {
           )}
         </div>
       </div>
+      <Ipfsupload />
       <Leaderboard />
     </main>
   );
