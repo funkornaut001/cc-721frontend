@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { ThirdwebProvider, localWallet, coinbaseWallet, metamaskWallet, paperWallet, smartWallet } from "@thirdweb-dev/react";
 import "../styles/globals.css";
-import { NavBar } from "../components/hamburger";
+// import { NavBar } from "../components/hamburger";
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           //   coinbaseWallet(),
       ]}
     >
-      <NavBar />
+      {/* <NavBar /> */}
       <Component {...pageProps} />
     </ThirdwebProvider>
   );
